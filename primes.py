@@ -4,9 +4,9 @@ import numpy as np
 
 
 def primes(n: int):
-    sieve = np.ones(n)
-    for k in range(2, math.isqrt(n)):
-        sieve[2 * k :: k] = 0
+    sieve = np.ones(n, dtype=bool)
+    for k in range(2, math.isqrt(n) + 1):
+        sieve[2 * k :: k] = False
     return sieve.nonzero()[0][2:]
 
 
